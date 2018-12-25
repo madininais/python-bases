@@ -11,7 +11,3 @@ np.random.random(5)
 np.random.random((5,2))
 
 np.random.choice(X.shape[0], 20, replace=False)
-
-
-lalalalalal
-bababa
