@@ -42,3 +42,28 @@ np.any(x < 0)
 np.all(x < 10)
 
 
+M.shape
+M.reshape((3,1))
+
+
+## sorting arrays
+np.sort(x)
+np.sort(x, axis=0) #sort each column of x
+np.partition(x, 3) #the smallest k values to the left + raminings
+
+
+## strcutured array
+data = np.zeros(4, dtype={'names':('name', 'age', 'weight'),
+							'formats':('U10', 'i4', 'f8')})
+data['names']=[bla,bla,bla]
+data['age']=[bla,bla,bla]
+data['weight']=[bla,bla,bla]
+
+
+## NumPy’s datetime64
+date = np.array('2015-07-04', dtype=np.datetime64)
+date + np.arange(12)
+np.datetime64('2015-07-04 12:00')
+
+
+

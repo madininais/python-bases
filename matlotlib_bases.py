@@ -1,4 +1,6 @@
-%matplotlib inline
+%matplotlib inline #static plot embedded in the noetbook
+%matplotlib notebook #interactve plot embedded in the noetbook
+
 import matplotlib.pyplot as plt
 plt.style.use('seaborn-whitegrid')
 
@@ -27,6 +29,18 @@ plt.scatter(x, y, c=rng.rand(100), s=1000 * rng.rand(100), alpha=0.3,
             cmap='viridis')
 # plot is more efficient on large dataset vs scatter, because scatter has the capacity to render a different size/color for each point
 
+# hitograms
+plt.hist(data, databins=30, normed=True, alpha=0.5,
+                    histtype='stepfilled', color='steelblue',
+                    edgecolor='none'))
+
+# visualizing errors
+plt.errorbar(x, y, yerr=dy, fmt='.k') # basic errobars
+
+# 2D histgrams and binnings
+
+ 
+
 ######### object oriented method 
 
 # First create a grid of plots
@@ -42,9 +56,12 @@ ax.plot(x, np.sin(x))
 ax.set(xlim=(0, 10), ylim=(-2, 2),
        xlabel='x', ylabel='sin(x)',
        title='A Simple Plot')
+ax[0].legend(['input'], loc=2)
+ax[0].get_xticklabels()[4].set(weight='heavy', color='red')
+ax[0].axvline(local_max, alpha=0.3, color='red')
 
 
 
-## visualizing errors
-plt.errorbar(x, y, yerr=dy, fmt='.k');
+
+
 

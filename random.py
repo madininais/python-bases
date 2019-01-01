@@ -11,3 +11,5 @@ np.random.random(5)
 np.random.random((5,2))
 
 np.random.choice(X.shape[0], 20, replace=False)
+
+np.random.multivariate_normal(mean, cov, 100)
