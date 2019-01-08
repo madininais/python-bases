@@ -39,7 +39,7 @@ plt.errorbar(x, y, yerr=dy, fmt='.k') # basic errobars
 
 # 2D histgrams and binnings
 
- 
+
 
 ######### object oriented method 
 
@@ -57,10 +57,18 @@ ax.set(xlim=(0, 10), ylim=(-2, 2),
        xlabel='x', ylabel='sin(x)',
        title='A Simple Plot')
 ax[0].legend(['input'], loc=2)
-ax[0].get_xticklabels()[4].set(weight='heavy', color='red')
+ax[0].get_xticklabels()[4].set(weight='heavy', color='red') # get_xticklabels to access x labels
 ax[0].axvline(local_max, alpha=0.3, color='red')
 
+labels = ax.get_xticklabels()
+plt.setp(labels, rotation=45, horizontalalignment='right')
 
+ax.barh(x,y)
+ax.axvline(x, ls='--', color='r')
+
+## style / themes
+print(plt.style.available)
+plt.style.use('fivethirtyeight')
 
 
 
